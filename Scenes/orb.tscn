@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1uuivl6uefvw"]
+
+[ext_resource type="Script" uid="uid://daqne6xsear8u" path="res://Scripts/orb_behaviour.gd" id="1_ryljl"]
+[ext_resource type="Texture2D" uid="uid://bp0awfc2qw67a" path="res://Sprites/MainSprite_remove.png" id="2_4tb7o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3x0a"]
+
+[sub_resource type="Animation" id="Animation_ryljl"]
+resource_name = "disappear"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4tb7o"]
+_data = {
+&"disappear": SubResource("Animation_ryljl")
+}
+
+[node name="Orb" type="StaticBody2D"]
+script = ExtResource("1_ryljl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_r3x0a")
+debug_color = Color(0, 0.649141, 0.155668, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4tb7o")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.3
+texture = ExtResource("2_4tb7o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4tb7o")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
