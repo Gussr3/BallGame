@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7nnx4lv8ro5o"
-path="res://.godot/imported/OutlineBall.png-5a8ca4034e5fca530814c11afeff407e.ctex"
+path="res://.godot/imported/OutlineBall.png-35604f14c6f8a7a0e6fd74d984cd911e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BallGame/Sprites/OutlineBall.png"
-dest_files=["res://.godot/imported/OutlineBall.png-5a8ca4034e5fca530814c11afeff407e.ctex"]
+source_file="res://Sprites/OutlineBall.png"
+dest_files=["res://.godot/imported/OutlineBall.png-35604f14c6f8a7a0e6fd74d984cd911e.ctex"]
 
 [params]
 

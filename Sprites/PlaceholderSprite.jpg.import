@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b18axnso00nen"
-path="res://.godot/imported/PlaceholderSprite.jpg-429d96a9f11f1ba8a17c242ca360bbed.ctex"
+path="res://.godot/imported/PlaceholderSprite.jpg-284ab87fbd1554ce1fd226e0abd9ef51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BallGame/Sprites/PlaceholderSprite.jpg"
-dest_files=["res://.godot/imported/PlaceholderSprite.jpg-429d96a9f11f1ba8a17c242ca360bbed.ctex"]
+source_file="res://Sprites/PlaceholderSprite.jpg"
+dest_files=["res://.godot/imported/PlaceholderSprite.jpg-284ab87fbd1554ce1fd226e0abd9ef51.ctex"]
 
 [params]
 

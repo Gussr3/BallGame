@@ -28,9 +28,17 @@ func _process(delta: float) -> void:
 func check_ray_collision():
 	for ray in rayCasts:
 		if ray.is_colliding():
-			#fill upp
-			pass
+			var colliding_ray = ray
+			var colliding_ray_index = rayCasts.find(colliding_ray)
+			AI_movement(colliding_ray_index)
 			
 func get_ray_direction(ray: RayCast2D):
 	return ray.global_transform.x
+	
+func AI_movement(collidingRay : int):
+	position -= rayDirections[collidingRay + 2] * 1.5
+	
+	
+
+	
 		

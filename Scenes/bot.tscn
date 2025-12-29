@@ -21,52 +21,77 @@ shape = SubResource("CircleShape2D_vgqql")
 
 [node name="RayCast270" type="RayCast2D" parent="RayCasts"]
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast300" type="RayCast2D" parent="RayCasts"]
 rotation = -0.523599
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast330" type="RayCast2D" parent="RayCasts"]
 rotation = -1.0472
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast360" type="RayCast2D" parent="RayCasts"]
 rotation = -1.5708
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast30" type="RayCast2D" parent="RayCasts"]
 rotation = -2.0944
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast60" type="RayCast2D" parent="RayCasts"]
 rotation = -2.61799
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast90" type="RayCast2D" parent="RayCasts"]
 rotation = 3.14159
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast120" type="RayCast2D" parent="RayCasts"]
 rotation = 2.61799
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast150" type="RayCast2D" parent="RayCasts"]
 rotation = 2.09439
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast180" type="RayCast2D" parent="RayCasts"]
 rotation = 1.5708
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast210" type="RayCast2D" parent="RayCasts"]
 rotation = 1.0472
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="RayCast240" type="RayCast2D" parent="RayCasts"]
 rotation = 0.523598
 scale = Vector2(4, 4)
+target_position = Vector2(0, 60)
+collide_with_areas = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(8, -16)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 200)
