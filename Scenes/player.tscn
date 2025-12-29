@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3vj2eh1p08j3"]
+[gd_scene load_steps=7 format=3 uid="uid://3vj2eh1p08j3"]
 
 [ext_resource type="Script" uid="uid://cnvuslblyyb38" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://b3qf0gofhua6s" path="res://Sprites/Outline.png" id="2_vgqql"]
@@ -7,6 +7,14 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 108.462
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgqql"]
+font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.768627)
+shadow_offset = Vector2(-0.185, 1.905)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6t5aa")
@@ -20,11 +28,13 @@ texture = ExtResource("3_fkybt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vgqql")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 73.0
-offset_top = -148.0
-offset_right = 113.0
-offset_bottom = -125.0
+[node name="ValueMeter" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -72.0
+offset_right = 140.0
+offset_bottom = 65.0
+text = "00"
+label_settings = SubResource("LabelSettings_vgqql")
 
 [node name="MarkerDir" type="Node2D" parent="."]
 position = Vector2(186, 0)

@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
 var rng = RandomNumberGenerator.new()
-var speed : int = 10
+var speed : int = 100
 var rayCasts = []
 var rayDirections = []
+
+var player_value : int = 1
+var is_stuck : bool
+var avoid_pos : Vector2
+var random_pos = Vector2()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,29 +22,48 @@ func _ready() -> void:
 		if child is RayCast2D:
 			rayDirections.append(get_ray_direction(child))
 			
-	print(rayCasts)
-	print(rayDirections)
-	
 			
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	check_ray_collision()
 	
+	#assign value
+	$ValueMeter.text = str(player_value)
+	if is_stuck:
+		get_unstuck()
+	
+	
+	
 func check_ray_collision():
 	for ray in rayCasts:
 		if ray.is_colliding():
+			is_stuck = false
 			var colliding_ray = ray
 			var colliding_ray_index = rayCasts.find(colliding_ray)
 			AI_movement(colliding_ray_index)
+		elif !ray.is_colliding():
+			is_stuck = true
+			
 			
 func get_ray_direction(ray: RayCast2D):
-	return ray.global_transform.x
+	return ray.global_transform.y
 	
 func AI_movement(collidingRay : int):
-	position -= rayDirections[collidingRay + 2] * 1.5
-	
-	
+	velocity = rayDirections[collidingRay] * speed
+
+	move_and_slide()
+
+func get_unstuck():
+	position.x += random_pos.x
+	position.y += random_pos.y
+
+
+
 
 	
-		
+
+
+func _on_movement_tick_timeout() -> void:
+	random_pos.x = rng.randi_range(-10, 10)
+	random_pos.y = rng.randi_range(-10, 10)
