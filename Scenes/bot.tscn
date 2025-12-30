@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnxaflidbi4ku"]
+[gd_scene load_steps=6 format=3 uid="uid://dnxaflidbi4ku"]
 
 [ext_resource type="Script" uid="uid://ccgff5rk4vros" path="res://Scripts/bot.gd" id="1_pul5b"]
 [ext_resource type="Texture2D" uid="uid://7nnx4lv8ro5o" path="res://Sprites/OutlineBall.png" id="2_ch2fi"]
+[ext_resource type="PackedScene" uid="uid://4c0j1u3tvda" path="res://Scenes/hitbox.tscn" id="3_ch2fi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 108.462
@@ -15,6 +16,7 @@ shadow_color = Color(0, 0, 0, 0.768627)
 shadow_offset = Vector2(-0.185, 1.905)
 
 [node name="Bot" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_pul5b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,84 +29,84 @@ shape = SubResource("CircleShape2D_vgqql")
 
 [node name="RayCast270" type="RayCast2D" parent="RayCasts"]
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast300" type="RayCast2D" parent="RayCasts"]
 rotation = -0.523599
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast330" type="RayCast2D" parent="RayCasts"]
 rotation = -1.0472
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast360" type="RayCast2D" parent="RayCasts"]
 rotation = -1.5708
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast30" type="RayCast2D" parent="RayCasts"]
 rotation = -2.0944
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast60" type="RayCast2D" parent="RayCasts"]
 rotation = -2.61799
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast90" type="RayCast2D" parent="RayCasts"]
 rotation = 3.14159
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast120" type="RayCast2D" parent="RayCasts"]
 rotation = 2.61799
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast150" type="RayCast2D" parent="RayCasts"]
 rotation = 2.09439
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast180" type="RayCast2D" parent="RayCasts"]
 rotation = 1.5708
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast210" type="RayCast2D" parent="RayCasts"]
 rotation = 1.0472
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RayCast240" type="RayCast2D" parent="RayCasts"]
 rotation = 0.523598
 scale = Vector2(4, 4)
-target_position = Vector2(0, 45)
+target_position = Vector2(0, 85)
 collide_with_areas = true
 collide_with_bodies = false
 
@@ -119,5 +121,7 @@ label_settings = SubResource("LabelSettings_pul5b")
 [node name="MovementTick" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Hitbox" parent="." instance=ExtResource("3_ch2fi")]
 
 [connection signal="timeout" from="MovementTick" to="." method="_on_movement_tick_timeout"]

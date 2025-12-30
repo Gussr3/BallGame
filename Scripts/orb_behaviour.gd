@@ -20,10 +20,10 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		#scale colliders---------------------
-		body.scale += Vector2(value, value) / 50
+		##scale colliders---------------------
+		#body.scale += Vector2(value, value) / 50
 		#give value-----------------------------
-		body.player_value += round(scaling_const)
+		body.player_value += scaling_const
 		#remove+animations-----------------------------------------
 		var tween = create_tween().tween_property($Sprite2D, "scale", Vector2(0, 0), 0.3)
 		await get_tree().create_timer(0.3).timeout

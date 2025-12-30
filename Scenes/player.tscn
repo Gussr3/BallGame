@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://3vj2eh1p08j3"]
+[gd_scene load_steps=8 format=3 uid="uid://3vj2eh1p08j3"]
 
 [ext_resource type="Script" uid="uid://cnvuslblyyb38" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://b3qf0gofhua6s" path="res://Sprites/Outline.png" id="2_vgqql"]
 [ext_resource type="Texture2D" uid="uid://7nnx4lv8ro5o" path="res://Sprites/OutlineBall.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://c75qvkwkxktxd" path="res://Sprites/IndicatorSprite.png" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://4c0j1u3tvda" path="res://Scenes/hitbox.tscn" id="5_fkybt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 108.462
@@ -47,3 +48,5 @@ texture = ExtResource("4_vgqql")
 zoom = Vector2(0.1, 0.1)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="Hitbox" parent="." instance=ExtResource("5_fkybt")]
